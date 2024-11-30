@@ -1,0 +1,419 @@
+/* Tổng thể body */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* ---------------------------------------------------- */
+/* Phần mở đầu */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full màn hình */
+    overflow: hidden;
+}
+/* Ảnh nền */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh bao phủ toàn bộ khung */
+    z-index: -1; /* Đẩy ảnh xuống dưới */
+}
+
+/* Nội dung hiển thị trên ảnh */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.7); /* Đổ bóng chữ */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Nút đặt bàn */
+.hero-button {
+    text-decoration: none;
+    background-color: #464141;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+/* Bao bọc phần chữ */
+.text-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  /* Tạo nền màu xám mờ */
+  .text-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(99, 97, 97, 0.5); /* Màu xám mờ */
+    z-index: -1; /* Đặt nền phía sau chữ */
+    border-radius: 10px; /* Góc bo tròn (tùy chỉnh) */
+  }
+  
+  /* Phần chữ */
+  .text-container h1, .text-container p {
+    position: relative;
+    color: white; /* Màu chữ trắng để nổi bật */
+    padding: 10px 20px; /* Khoảng cách với nền */
+    margin: 0;
+    text-align: center;
+  }
+  
+.hero-button:hover {
+    background-color: #753623; /* Hiệu ứng khi hover */
+    color: #fff;
+    transform: scale(1.05);
+}
+/* ---------------------------------------------------- */
+/* Container chính ( phần đặt hàng ) */
+.booking-container {
+    max-width: 800px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-left: 200px;
+}
+/* Phần hình ảnh */
+.image-container {
+    position: relative;
+    width: 100%; /* hoặc đặt kích thước cố định */
+    max-width: 600px; /* Tùy chỉnh kích thước khung */
+    height: auto;
+    display: inline-block;
+  }
+  
+.image-container img {
+    width: 100%; /* Đảm bảo hình ảnh phủ kín khung */
+    height: auto;
+    object-fit: cover; /* Cắt và hiển thị hình ảnh bên trong khung */
+    position: relative;
+    clip-path: inset(0 0 calc(100% - 500px) 0); /* Crop ảnh theo chiều cao */
+}
+  
+.booking-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.booking-container p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Form */
+.booking-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    font-size: 18px;
+}
+
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+    color: #aaa;
+}
+
+/* Label */
+.booking-form label {
+    display: block;
+    font-weight: bold;
+    color: #a0553d;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Yêu cầu thêm */
+.booking-form textarea {
+    grid-column: span 2;
+    resize: none;
+    height: 100px;
+}
+/* Container slider */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Chiều cao của slider */
+    overflow: hidden;
+    margin-right: 20px; /* Căn chỉnh với form */
+}
+/* Button */
+.booking-form button {
+    grid-column: span 2;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.booking-form button:hover {
+    background-color: #333;
+}
+/* Container tổng */
+.booking-section {
+    margin-left: 100px;
+    display: flex; /* Sử dụng Flexbox để đặt các phần tử nằm ngang */
+    align-items: center; /* Căn giữa dọc ảnh và form */
+    gap: 100px; /* Khoảng cách giữa ảnh và form */
+    padding: 20px;
+}
+/* Menu Section */
+.menu-section {
+    position: relative;
+    background: #000;
+    color: white;
+    overflow: hidden;
+    padding: 50px 0;
+}
+
+.menu-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.menu-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.menu-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease;
+}
+
+.menu-content p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease;
+}
+/* ---------------------------------------------------- */
+/* Slider menu ảnh đồ ăn*/
+.menu-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+/* Menu Image: Đảm bảo ảnh chiếm toàn bộ khung chứa */
+.menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Lấp đầy khung chứa mà không bị méo ảnh */
+    background-color: transparent; /* Đảm bảo không có nền đen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0s ease-in-out;
+}
+
+.menu-image.active {
+    opacity: 1;
+    position: relative;
+}
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(181, 181, 181, 0.8); /* Nền trắng nhạt */
+    border: none;
+    border-radius: 50%; /* Hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3; /* Đặt nút lên trên slider */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng đổ bóng */
+}
+.arrow:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.left-arrow {
+    left: 0px;
+}
+
+.right-arrow {
+    right: 0px;
+}
+
+/* Keyframes for Text Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* About Section */
+.about {
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Menu Section */
+.menu {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 30%;
+}
+
+.menu-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+/* Phần container chính */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #333; /* Màu nền */
+    color: #fff; /* Màu chữ */
+    padding: 20px;
+    justify-content: space-between;
+  }
+  
+  /* Google Map ở bên trái */
+  .map {
+    flex: 1; /* Chiếm 1 phần */
+    min-width: 300px;
+    margin-right: 20px;
+  }
+  
+  /* Thông tin liên hệ ở bên phải */
+  .contact-info {
+    flex: 1; /* Chiếm 1 phần */
+    min-width: 300px;
+  }
+  
+  .contact-info h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #f9a825; /* Màu nhấn */
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .link{
+    text-decoration: none;
+  }
+  /* Responsive khi màn hình nhỏ */
+  @media (max-width: 666px) {
+    .contact-section {
+      flex-direction: column;
+    }
+  
+    .map, .contact-info {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
